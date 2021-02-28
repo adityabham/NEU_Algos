@@ -1,7 +1,7 @@
 function [Trap] = TrapEq(func, n, a, b)
 if n == 1
     h = (b-a)/n;
-    Trap = h *(func(a)+func(b))/2; 
+    Trap = h*(func(a)+func(b))/2; 
 else
     points = linspace(a, b, n+1);
     h = abs(points(2) - points(1));

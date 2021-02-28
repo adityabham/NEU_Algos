@@ -1,4 +1,4 @@
-function [I] = adaptive_quadrature(func, a, b, abstol)
+function I = QuadAdapt(func, a, b, abstol)
 
 h1 = (b-a)/2;
 h2 = h1/2;
@@ -14,8 +14,8 @@ Ea = abs(Ih2 - Ih1);
 if Ea <= abstol
     I = Ih2 + (1/15)*(Ih2 - Ih1); 
 else
-    Ia = adaptive_quadrature(func, a, c, abstol); 
-    Ib = adaptive_quadrature(func, c, b, abstol); 
+    Ia = QuadAdapt(func, a, c, abstol); 
+    Ib = QuadAdapt(func, c, b, abstol); 
     I = Ia + Ib; 
 end
 end
