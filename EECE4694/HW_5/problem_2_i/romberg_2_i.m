@@ -9,7 +9,7 @@ rms_a = sqrt(I_1a+I_2a);
 disp(rms_a)
 
 func_1b = @(t) (5.*exp(-1.25.*t).*sin(2.*pi.*t)).^2; 
-func_2b = @(t) 0^2; 
+func_2b = @(t) 0.*t.^2; 
 
 [I_1b] = romberg(func_1b, 0, 0.5, 50, 1e-6); 
 [I_2b] = romberg(func_2b, 0.5, 1, 50, 1e-6);
