@@ -1,4 +1,16 @@
 function I = QuadAdapt(func, a, b, abstol)
+% -------------------------------------------------------------------
+% Author: Aditya Bhamidipati  
+% Date: 3/3/2020
+% Purpose: Adaptive Quadrature
+% Output Parameter: I (integral estimate)
+% Input Parameters: func (function handle),
+%                   a (lower limit),
+%                   b (upper limit),
+%                   abstol (tolerance)
+% Usage: I = QuadAdapt(func, a, b, abstol)
+% -------------------------------------------------------------------
+% From code provided in lecture notes  
 
 h1 = (b-a)/2;
 h2 = h1/2;

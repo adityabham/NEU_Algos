@@ -20,9 +20,9 @@ while(1)
     rms_a = sqrt(I_1a+I_2a);
     
     if rms_a == rmsa
-        disp('RMS determined by Integral function:')
+        disp('RMS determined using the Integral function:')
         disp(rmsa) 
-        disp('RMS determined by Gaussian quadrature function:')
+        disp('RMS determined using the Gaussian quadrature function:')
         disp(rms_a)
         disp('number of points:')
         disp(n1) 
