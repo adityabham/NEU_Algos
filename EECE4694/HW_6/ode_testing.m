@@ -1,8 +1,8 @@
 clear; 
 tspan = 0:.01*10^-6:10*10^-6; %tspan param 
-i=[0 0 0]'; % initial conditions 
+i=[0 0 0]; % initial conditions 
 
-[t,x]=ode45(@homework,tspan,[0 0 0]'); % ode45 function 
+[t,x]=ode45(@odeEqs,tspan,i); % ode45 function 
 
 % ode45 outputs
 vc1 = x(:,1); 
@@ -29,7 +29,7 @@ ylabel('iL(t)')
 title('Subplot 3: Current through inductor');
 
 
-function RLC=homework(t,x)
+function RLC=odeEqs(t,x)
 C1= 10^(-6);
 C2= 10^(-9);
 R= 10^(5);

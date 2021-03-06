@@ -24,7 +24,7 @@ il(ctr)=0;
 vs_value(ctr)=func_vs(t(ctr));
 
 % Runge-Kutta 4th order method
-while(ctr<num_steps) 
+while(ctr<=num_steps) 
     
 %   k1
     k1_VC1=func_VC1(t(ctr),vc1(ctr),vc2(ctr),il(ctr),func_vs(t(ctr)));
@@ -46,6 +46,7 @@ while(ctr<num_steps)
     k4_VC2=func_VC2(t(ctr)+h,vc1(ctr)+h*k3_VC1,vc2(ctr)+h*k3_VC2,func_vs(t(ctr)+h));
     k4_IL=func_IL(t(ctr)+h,vc1(ctr)+h*k3_VC1,func_vs(t(ctr)+h));
     
+%   outputs
     vc1(ctr+1)=vc1(ctr)+h/6*(k1_VC1+2*k2_VC1+2*k3_VC1+k4_VC1);
     vc2(ctr+1)=vc2(ctr)+h/6*(k1_VC2+2*k2_VC2+2*k3_VC2+k4_VC2);
     il(ctr+1)= il(ctr)+h/6*(k1_IL+2*k2_IL+2*k3_IL+k4_IL);
