@@ -79,5 +79,5 @@ subplot(2,2,4)
 plot(t,vs_value)
 xlabel('t')
 ylabel('Vs(t)')
-title('Vs over time')
+title('Subplot 4: Vs over time')
 
