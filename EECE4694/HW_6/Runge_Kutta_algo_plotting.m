@@ -5,7 +5,7 @@ C2= 10^(-9);
 R= 10^(5);
 L= 10^(-5);
 
-% functions 
+% Vs(t) and state variable ODE functions 
 func_VC1 = @(t,vc1,vc2,il,vs) (il./C1)-((vc1-vs-vc2).*(1./(R*C1)));   
 func_VC2 = @(t,vc1,vc2,vs) (vc1-vs-vc2).*(1./(R.*C2));
 func_IL = @(t,vc1,vs) (vs-vc1).*(1./L);
@@ -23,7 +23,7 @@ vc2(ctr)=0;
 il(ctr)=0;
 vs_value(ctr)=func_vs(t(ctr));
 
-% Runge-Kutta 4th order method
+% Runge-Kutta 4th order method implementation 
 while(ctr<=num_steps) 
     
 %   k1
@@ -46,7 +46,7 @@ while(ctr<=num_steps)
     k4_VC2=func_VC2(t(ctr)+h,vc1(ctr)+h*k3_VC1,vc2(ctr)+h*k3_VC2,func_vs(t(ctr)+h));
     k4_IL=func_IL(t(ctr)+h,vc1(ctr)+h*k3_VC1,func_vs(t(ctr)+h));
     
-%   outputs
+%   solution vectors  
     vc1(ctr+1)=vc1(ctr)+h/6*(k1_VC1+2*k2_VC1+2*k3_VC1+k4_VC1);
     vc2(ctr+1)=vc2(ctr)+h/6*(k1_VC2+2*k2_VC2+2*k3_VC2+k4_VC2);
     il(ctr+1)= il(ctr)+h/6*(k1_IL+2*k2_IL+2*k3_IL+k4_IL);
@@ -61,23 +61,23 @@ subplot(2,2,1)
 plot(t,vc1)
 xlabel('t')
 ylabel('Vc1(t)')
-title('Subplot 1: Voltage accross capacitor C1')
+title('Subplot 1: Voltage across C1')
 
 subplot(2,2,2)
 plot(t,vc2)
 xlabel('t')
 ylabel('Vc2(t)')
-title('Subplot 2: Voltage accross capacitor C2')
+title('Subplot 2: Voltage across C2')
 
 subplot(2,2,3)
 plot(t,il)
 xlabel('t')
 ylabel('iL(t)')
-title('Subplot 3: Current through inductor')
+title('Subplot 3: Current through L')
 
 subplot(2,2,4)
 plot(t,vs_value)
 xlabel('t')
 ylabel('Vs(t)')
-title('Subplot 4: Vs over time')
+title('Vs vs Time')
 

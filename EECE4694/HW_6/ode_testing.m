@@ -14,22 +14,23 @@ subplot(2,2,1)
 plot(t,vc1)
 xlabel('t')
 ylabel('Vc1(t)')
-title('Subplot 1: Voltage accross capacitor C1');
+title('Subplot 1: Voltage across C1');
 
 subplot(2,2,2)
 plot(t,vc2)
 xlabel('t')
 ylabel('Vc2(t)')
-title('Subplot 2: Voltage accross capacitor C2');
+title('Subplot 2: Voltage across C2');
 
 subplot(2,2,3)
 plot(t,il)
 xlabel('t')
 ylabel('iL(t)')
-title('Subplot 3: Current through inductor');
+title('Subplot 3: Current through L');
 
 
 function RLC=odeEqs(t,x)
+% RLC functions 
 C1= 10^(-6);
 C2= 10^(-9);
 R= 10^(5);
