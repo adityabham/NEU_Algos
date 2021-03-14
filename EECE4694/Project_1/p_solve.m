@@ -27,16 +27,3 @@ bp(1) = (-(h^2)/2)*(q*Na)/epsilon;
 bp(Np+1) = 0;
 
 phi_p = Ap\bp'; 
-
-figure(1);
-plot(xp_range,phi_p);
-
-% bvp4c comp
-
-bvpfcn_p = @(x,phi) [phi(2); (q*Na)/epsilon];
-bcfcn_p = @(phia,phib) [phia(2); phib(1)];
-solinit_p = bvpinit(xp_range, [1 0]);
-sol_p = bvp4c(bvpfcn_p, bcfcn_p, solinit_p);
-phi_test_p = sol_p.y(1,:);
-figure(2);
-plot(xp_range,phi_test_p);
