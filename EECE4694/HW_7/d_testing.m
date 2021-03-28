@@ -27,7 +27,7 @@ plot(v2,yfit)
 k = 1.38e-23; 
 q = 1.6e-19;
 T_calc = Vt*q/k; 
-disp(T_calc); % this does not seem to be resonable 
+disp(T_calc); 
 
 % part d 
 nVt = 1/p(1);
