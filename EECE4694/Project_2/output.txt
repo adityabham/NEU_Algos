@@ -1,0 +1,25 @@
+Part A
+-------
+Optimal Number of type A Circuit Boards:  10.00
+Optimal Number of type B Circuit Boards:  32.00
+Optimal Number of type C Circuit Boards:  43.00
+Optimal Number of type D Circuit Boards:  10.00
+
+Part B
+-------
+Total Profit for the week: 1185.00
+
+Part C
+-------
+Total # of minutes to produce all the type A Circuit Boards: 480.00
+Total # of minutes to produce all the type B Circuit Boards: 1344.00
+Total # of minutes to produce all the type C Circuit Boards: 2537.00
+Total # of minutes to produce all the type D Circuit Boards: 390.00
+
+Part D
+-------
+Total # of minutes spent in Etching and Lamination: 1438.00
+Total # of minutes spent in Drilling: 962.00
+Total # of minutes spent in Assembly: 956.00
+Total # of minutes spent in Testing: 1395.00
+
