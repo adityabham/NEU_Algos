@@ -1,4 +1,4 @@
-clear;clc;
+clear; clc;
 format long
 
 v1 = xlsread('diode_data.xlsx','A3:A22');
@@ -19,15 +19,15 @@ p = polyfit(v2,z,1);
 Is = exp(p(2));
 Vt = 1/p(1); 
 Id_fit = Is*exp(v2/Vt); 
-plot(v2,Id,'*'); grid on;
-hold on;
+plot(v2,Id,'*'); 
+grid on; hold on; 
 plot(v2,Id_fit)
 
 % part c 
 k = 1.38e-23; 
 q = 1.6e-19;
 T_calc = Vt*q/k; 
-disp(T_calc); 
+disp(T_calc) 
 
 % part d 
 nVt = 1/p(1);
@@ -41,8 +41,13 @@ r2 = (St-Sr)/St;
 disp(r2)      
 
 % part f 
-vD_eval = [0.375, 0.4, 0.425, 0.45, 0.628, 0.64, 0.653, 0.662]; 
-Id_new = spline(v2,Id,vD_eval); 
-plot(vD_eval,Id_new,'ro');
+Vd_eval = [0.375, 0.4, 0.425, 0.45, 0.628, 0.64, 0.653, 0.662]; 
+Id_new = spline(v2,Id,Vd_eval); 
+disp(Id_new); 
+plot(Vd_eval,Id_new,'ro');
+
+% plotting parameters 
+xlabel('V2/VD (V)'), ylabel('Id (A)');
+title("Id vs V2/VD. R^2 = "+ r2);
 legend('raw data','fitted curve','interpolated points','Location','southeast')
 
