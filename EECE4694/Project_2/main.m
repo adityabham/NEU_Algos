@@ -2,7 +2,6 @@ clear; clc;
 
 % Objective function 
 fx= @(x) -(12*x(1)+10*x(2)+15*x(3)+10*x(4));
-
 % initial guesses
 x0=[10; 10; 10; 10];
 % Linear inequality constraints
@@ -45,7 +44,6 @@ fprintf(fileID,'Total # of minutes to produce all the type B Circuit Boards: %6.
 fprintf(fileID,'Total # of minutes to produce all the type C Circuit Boards: %6.2f\n',C_minutes);
 fprintf(fileID,'Total # of minutes to produce all the type D Circuit Boards: %6.2f\n',D_minutes);
 fprintf(fileID,'\n');
-
 
 % D 
 etch_and_lam_minutes = sum(A(1,:)' .* xmax);
